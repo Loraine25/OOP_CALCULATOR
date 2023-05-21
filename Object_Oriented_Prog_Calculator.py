@@ -22,3 +22,18 @@ class Calculator:
         while self.retry:
             self.perform_calculation()
             self.ask_for_retry()
+
+    def perform_calculation(self):
+        
+# Choosing Operation
+        operation = input(
+            '"+" for addition\n'
+            '"-" for subtraction\n'
+            '"*" for multiplication\n'
+            '"/" for division\n'
+            'Select an operation: '
+        )
+
+# Ask to enter first and second number
+        first_number = float(input("\033[;33m" "Enter the 1st number: "))
+        second_number = float(input("\033[;33m" "Enter the 2nd number: "))
