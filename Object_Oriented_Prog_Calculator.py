@@ -99,3 +99,9 @@ class Calculator:
                     raise ValueError("Invalid Input")
             except ValueError:
                 print("Invalid Input. Please enter 'yes' or 'no'.")
+
+# Create an instance of the Calculator class
+calc = Calculator()
+
+# Start the calculator program
+calc.start()
