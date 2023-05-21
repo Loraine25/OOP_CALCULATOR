@@ -12,3 +12,13 @@ print("")
 print("\033[1;3mMy name is \033[;45;1;3mLoraine\033[0m")
 your_name = input("\033[1;3mWhat is your name?\033[0m")
 print("\033[;1;3mI'm glad that you're here!\033[;34;1;3m" + your_name + "\033[0m \033[;1;3m, sit back and learn with me!\033[0m")
+
+class Calculator:
+    def __init__(self):
+        self.retry = True
+
+    def start(self):
+        print("\n")
+        while self.retry:
+            self.perform_calculation()
+            self.ask_for_retry()
