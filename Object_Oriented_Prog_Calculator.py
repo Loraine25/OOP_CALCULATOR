@@ -24,7 +24,7 @@ class Calculator:
             self.ask_for_retry()
 
     def perform_calculation(self):
-        
+
 # Choosing Operation
         operation = input(
             '"+" for addition\n'
@@ -37,3 +37,48 @@ class Calculator:
 # Ask to enter first and second number
         first_number = float(input("\033[;33m" "Enter the 1st number: "))
         second_number = float(input("\033[;33m" "Enter the 2nd number: "))
+
+# If the user wants addition
+        if operation == "+":
+            self.addition(first_number, second_number)
+
+# If the user wants subtraction
+        elif operation == "-":
+            self.subtraction(first_number, second_number)
+
+# If the user wants multiplication
+        elif operation == "*":
+            self.multiplication(first_number, second_number)
+
+# If the user wants division
+        elif operation == "/":
+            self.division(first_number, second_number)
+
+    @staticmethod
+    def addition(first_number, second_number):
+        print(first_number, "+", second_number)
+        result = first_number + second_number
+        print("The result is:", "\033[;3m" + str(result) + "\033[;m")
+
+    @staticmethod
+    def subtraction(first_number, second_number):
+        print(first_number, "-", second_number)
+        result = first_number - second_number
+        print("The difference:", "\033[;3m" + str(result) + "\033[;m")
+
+    @staticmethod
+    def multiplication(first_number, second_number):
+        print(first_number, "*", second_number)
+        result = first_number * second_number
+        print("The product:", "\033[;3m" + str(result) + "\033[;m")
+
+    @staticmethod
+    def division(first_number, second_number):
+        try:
+            print(first_number, "/", second_number)
+            result = first_number / second_number
+            print("The quotient:", "\033[;3m" + str(result) + "\033[;m")
+        except ZeroDivisionError as error:
+            print("\033[1;31m" "Invalid equation\n")
+            print(error)
+            print("\nTry again, please insert a non-zero number")
