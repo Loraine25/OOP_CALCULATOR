@@ -82,3 +82,20 @@ class Calculator:
             print("\033[1;31m" "Invalid equation\n")
             print(error)
             print("\nTry again, please insert a non-zero number")
+
+    def ask_for_retry(self):
+        while True:
+            try:
+                retry = input("\nDo you want to perform another calculation? (yes/no): ")
+                if retry.lower() == "yes":
+                    print("")
+                    break
+                elif retry.lower() == "no":
+                    print("\033[;33m" + "Thank you for your hard work." + "\033[;3m")
+                    print("")
+                    self.retry = False
+                    break
+                else:
+                    raise ValueError("Invalid Input")
+            except ValueError:
+                print("Invalid Input. Please enter 'yes' or 'no'.")
