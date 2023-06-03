@@ -24,8 +24,7 @@ class Calculator:
             self.ask_for_retry()
 
     def perform_calculation(self):
-
-# Choosing Operation
+        # Choosing Operation
         operation = input(
             '"+" for addition\n'
             '"-" for subtraction\n'
@@ -34,23 +33,23 @@ class Calculator:
             'Select an operation: '
         )
 
-# Ask to enter first and second number
+        # Ask to enter first and second number
         first_number = float(input("\033[;33m" "Enter the 1st number: "))
         second_number = float(input("\033[;33m" "Enter the 2nd number: "))
 
-# If the user wants addition
+        # If the user wants addition
         if operation == "+":
             self.addition(first_number, second_number)
 
-# If the user wants subtraction
+        # If the user wants subtraction
         elif operation == "-":
             self.subtraction(first_number, second_number)
 
-# If the user wants multiplication
+        # If the user wants multiplication
         elif operation == "*":
             self.multiplication(first_number, second_number)
 
-# If the user wants division
+        # If the user wants division
         elif operation == "/":
             self.division(first_number, second_number)
 
@@ -100,8 +99,18 @@ class Calculator:
             except ValueError:
                 print("Invalid Input. Please enter 'yes' or 'no'.")
 
-# Create an instance of the Calculator class
-calc = Calculator()
+
+class CalculatorUI(Calculator):
+    def __init__(self):
+        super().__init__()
+
+    def start(self):
+        print("Welcome to the Calculator!")
+        super().start()
+
+
+# Create an instance of the CalculatorUI class
+calc_ui = CalculatorUI()
 
 # Start the calculator program
-calc.start()
+calc_ui.start()
